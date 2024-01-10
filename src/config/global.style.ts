@@ -20,7 +20,7 @@ html {
 body {
   min-height: 100%;
   line-height: 1.5;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -149,15 +149,7 @@ ${Object.values(utilityClasses)
   .replaceAll(' ', '')
   .replaceAll('\n', '')}
 
-// Remove these styles before starting your project
-#root {
-  height: 100vh;
-  padding-top: 80px;
-  display: grid;
-  place-content: center;
-  place-items: center;
-  gap: 1rem;
-}
+
 `
 
 export default GlobalStyle
