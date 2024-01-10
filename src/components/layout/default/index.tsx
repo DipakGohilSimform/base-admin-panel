@@ -1,0 +1,108 @@
+import React, { useState } from 'react'
+import { Menu } from 'antd'
+import { Layout } from './layout'
+import Images from '../../../config/images'
+import Dashboard from '../../icons/Dashboard'
+import Analytics from '../../icons/Analyitics'
+import Invoice from '../../icons/Invoice'
+import Schedule from '../../icons/Schedule'
+import Calendar from '../../icons/Calendar'
+import Messages from '../../icons/Messages'
+import Notification from '../../icons/Notification'
+import Settings from '../../icons/Settings'
+import { Button } from '../../ant'
+import Logout from '../../icons/Logout'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+
+const { Header, Sider, Content } = Layout
+
+const AntLayout: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false)
+  const navigate = useNavigate()
+  return (
+    <Layout>
+      <Sider width={218} trigger={null} collapsible collapsed={collapsed}>
+        <div className="logo">
+          <img src={Images.Logo} alt="logo" />
+        </div>
+        <Menu
+          onClick={({ key }) => {
+            navigate(key)
+            console.log('clicked')
+          }}
+          mode="inline"
+          defaultSelectedKeys={['1']}
+          items={[
+            {
+              key: '/dashboard',
+              icon: <Dashboard />,
+              label: 'Dashboard'
+            },
+            {
+              key: '/analytics',
+              icon: <Analytics />,
+              label: 'Analytics'
+            },
+            {
+              key: '/invoice',
+              icon: <Invoice />,
+              label: 'Invoice'
+            },
+            {
+              key: '/schedule',
+              icon: <Schedule />,
+              label: 'Schedule'
+            },
+            {
+              key: '/calendar',
+              icon: <Calendar />,
+              label: 'Calendar'
+            },
+            {
+              key: '/messages',
+              icon: <Messages />,
+              label: 'Messages'
+            },
+            {
+              key: '/notification',
+              icon: <Notification />,
+              label: 'Notification'
+            },
+            {
+              key: '/settings',
+              icon: <Settings />,
+              label: 'Settings'
+            }
+          ]}
+        />
+        <div className="sidebar-bottom">
+          <div className="sidebar-mockup">
+            <img src={Images.Lamp} alt="lamp" className="lamp" />
+            <Button>Upgrade Now</Button>
+          </div>
+          <div className="sidebar-logout">
+            <div className="profile">
+              <div className="person-picture">
+                <img src={Images.Profile} alt="profile" />
+              </div>
+              <div className="person-details">
+                <p className="name">Easin Arafat</p>
+                <p className="type">Free Account</p>
+              </div>
+            </div>
+            <Link to={'/'}>
+              <Logout />
+            </Link>
+          </div>
+        </div>
+      </Sider>
+      <Layout>
+        <Content>
+          <Outlet />
+        </Content>
+      </Layout>
+    </Layout>
+  )
+}
+
+export default AntLayout
