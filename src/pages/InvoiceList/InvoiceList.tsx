@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input, Tag } from 'antd'
+import { Input, Tag } from 'antd'
 import InvoiceListWrapper from './InvoiceListWrapper'
 import Search from '../../components/icons/Search'
 import Plus from '../../components/icons/Plus'
@@ -11,6 +11,7 @@ import Star from '../../components/icons/Star'
 import Images from '../../config/images'
 import Email from '../../components/icons/Email'
 import Calender from '../../components/icons/Calender'
+import { Button } from '../../components/ant'
 
 const InvoiceList = () => {
   interface DataType {
@@ -183,7 +184,9 @@ const InvoiceList = () => {
         <h1 className="page-title">Invoice List</h1>
         <div className="invoice-cta">
           <Input placeholder="Search" suffix={<Search />} />
-          <Button icon={<Plus />}>Add New</Button>
+          <Button type="primary" size="small" icon={<Plus />}>
+            Add New
+          </Button>
         </div>
       </div>
       <div className="invoice-table">

@@ -6,6 +6,8 @@ import GlobalStyle from './config/global.style'
 import AdminDashboard from './pages/Dashboard/AdminDashboard'
 import InvoiceList from './pages/InvoiceList/InvoiceList'
 import Login from './pages/Login/Login'
+import SignIn from './pages/SignIn/SignIn'
+import Calendar from './pages/Calendar/Calendar'
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +23,10 @@ function App() {
           element: <InvoiceList />
         },
         {
+          path: '/calendar',
+          element: <Calendar />
+        },
+        {
           path: '*',
           element: <NotFound />
         }
@@ -31,8 +37,8 @@ function App() {
       element: <Login />
     },
     {
-      path: '/',
-      element: <Login />
+      path: '/sign-in',
+      element: <SignIn />
     }
   ])
 

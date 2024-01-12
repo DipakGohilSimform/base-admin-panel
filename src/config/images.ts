@@ -17,6 +17,7 @@ import Iphone from '../assets/images/iphone.jpg'
 import Robert from '../assets/images/robert.png'
 import LoginMockup from '../assets/images/login-mockup.png'
 import SigninMockup from '../assets/images/signin-mockup.png'
+import Eddie from '../assets/images/eddie.png'
 
 const Images = {
   Logo,
@@ -37,7 +38,8 @@ const Images = {
   Iphone,
   Robert,
   LoginMockup,
-  SigninMockup
+  SigninMockup,
+  Eddie
 }
 
 export default Images

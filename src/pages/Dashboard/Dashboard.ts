@@ -16,6 +16,11 @@ export const DashboardStyle = styled.div`
       display: flex;
       gap: 15px;
     }
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
   .analytics-cards-wrapper {
     display: flex;

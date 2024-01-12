@@ -186,7 +186,12 @@ const AdminDashboard = () => {
               </Button>
             </Popover>
           </div>
-          <Table columns={columns} dataSource={data} pagination={false} />
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={false}
+            scroll={{ x: true }}
+          />
         </div>
         <div className="top-products">
           <div className="heading">

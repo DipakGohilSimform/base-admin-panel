@@ -6,6 +6,12 @@ const InvoiceListWrapper = styled.div`
     justify-content: space-between;
     margin-bottom: 35px;
 
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
     .page-title {
       font-size: 24px;
       font-weight: 700;

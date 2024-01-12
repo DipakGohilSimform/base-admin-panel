@@ -15,6 +15,12 @@ export const Layout = styled(AntLayout)`
     background-color: white;
     padding: 30px 50px;
   }
+  .menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 102px);
+  }
 
   .ant-menu-item {
     font-size: 16px;
@@ -51,10 +57,6 @@ export const Layout = styled(AntLayout)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
     margin: 30px 25px;
     .sidebar-mockup {
       border-radius: 20px;
