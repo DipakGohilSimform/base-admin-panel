@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 export const LoginWrapper = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100vw;
-
+  max-height: 100vh;
   .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,6 +12,7 @@ export const LoginWrapper = styled.div`
     background-color: var(--white);
     max-width: 448px;
     padding: 50px;
+    overflow: hidden;
     @media (max-width: 576px) {
       padding: 25px;
     }
@@ -136,5 +135,9 @@ export const LoginWrapper = styled.div`
     @media (max-width: 992px) {
       display: none;
     }
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    bottom: 0;
   }
 `

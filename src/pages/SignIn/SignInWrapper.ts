@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SignInWrapper = styled.div`
   display: flex;
-
+  min-height: 100vh;
   .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -123,7 +123,7 @@ export const SignInWrapper = styled.div`
       margin: 0 auto;
     }
   }
-  .login-mockup {
+  .signin-mockup {
     display: flex;
     justify-content: center;
     align-items: center;

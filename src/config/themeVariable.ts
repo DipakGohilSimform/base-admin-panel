@@ -36,6 +36,16 @@ export const componentTokens: OverrideToken = {
     colorPrimaryHover: 'var(--primary-ribbon-600)',
     colorPrimaryText: 'var(--black)'
   },
+  Radio: {
+    buttonBg:'var(--orange-50)',
+    buttonCheckedBg:'var(--orange-100)',
+    colorBorder:'transparent'
+  },
+  Input: {
+    borderRadius:10,
+    colorPrimaryHover:'var(--lavender)',
+    colorPrimaryActive:'var(--red)'
+  },
   Select: {
     colorBgElevated: 'var(--neutral-0)',
     selectorBg: 'var(--neutral-0)',

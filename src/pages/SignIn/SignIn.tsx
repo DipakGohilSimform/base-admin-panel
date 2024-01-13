@@ -67,7 +67,7 @@ const SignIn = () => {
           </p>
         </form>
       </div>
-      <div className="login-mockup">
+      <div className="signin-mockup">
         <img src={Images.SigninMockup} alt="mockup" />
       </div>
     </SignInWrapper>

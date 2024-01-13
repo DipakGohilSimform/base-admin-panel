@@ -6,7 +6,7 @@ export const Button = styled(AntButton)`
   justify-content: center;
   align-items: center;
   &:active {
-    background-color: var(--primary-ribbon-400);
+    background: var(--primary-ribbon-400) !important;
   }
   ${({ type }) => {
     if (type === 'default') {
@@ -22,8 +22,8 @@ export const Button = styled(AntButton)`
         }
         &:hover,
         &:active {
-          border: none !important;
-          color: var(--black) !important;
+          border: 1px solid var(--primary-ribbon-200);
+          background-color: var(--primary-ribbon-50);
         }
       `
     }

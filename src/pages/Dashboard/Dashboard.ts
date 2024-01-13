@@ -15,6 +15,19 @@ export const DashboardStyle = styled.div`
     .calender {
       display: flex;
       gap: 15px;
+
+      .ant-picker {
+        border-radius: 5px;
+        border: none;
+        padding: 11px 17px;
+
+        &:hover {
+          background-color: var(--primary-ribbon-50);
+        }
+      }
+      .ant-picker-focused {
+        background-color: var(--primary-ribbon-100);
+      }
     }
     @media (max-width: 992px) {
       flex-direction: column;
