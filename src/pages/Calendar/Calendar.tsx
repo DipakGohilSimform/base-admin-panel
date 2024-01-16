@@ -3,6 +3,8 @@ import { CalendarWrapper } from './CalenderWrapper'
 import { Button } from '../../components/ant'
 import Plus from '../../components/icons/Plus'
 import { Calendar as AntCalendar, Input, Radio } from 'antd'
+import type { BadgeProps, CalendarProps } from 'antd'
+import type { Dayjs } from 'dayjs'
 import { EventModal as Modal } from './CalenderWrapper'
 import DoubleArrow from '../../components/icons/DoubleArrow'
 import Images from '../../config/images'
@@ -10,6 +12,33 @@ import Clock from '../../components/icons/Clock'
 import EventCalendar from '../../components/icons/EventCalendar'
 import Location from '../../components/icons/Location'
 import Users from '../../components/icons/Users'
+import { Badge } from '../../components/ant/Badge/Badge'
+
+const getListData = (value: Dayjs) => {
+  let listData
+  switch (value.date()) {
+    case 11:
+      listData = [
+        { type: 'default', content: 'Free day' },
+        { type: 'success', content: 'Party Time' }
+      ]
+      break
+    case 23:
+      listData = [
+        { type: 'warning', content: 'Victory Day' },
+        { type: 'default', content: 'Christmas Day' }
+      ]
+      break
+    default:
+  }
+  return listData || []
+}
+
+const getMonthData = (value: Dayjs) => {
+  if (value.month() === 8) {
+    return 1394
+  }
+}
 
 const Calendar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -44,6 +73,56 @@ const Calendar = () => {
     { label: 'Pear', value: 'Pear' },
     { label: 'Orange', value: 'Orange', title: 'Orange' }
   ]
+
+  const monthCellRender = (value: Dayjs) => {
+    const num = getMonthData(value)
+    return num ? (
+      <div className="notes-month">
+        <section>{num}</section>
+        <span>Backlog number</span>
+      </div>
+    ) : null
+  }
+
+  const dateCellRender = (value: Dayjs) => {
+    const listData = getListData(value)
+    return (
+      <ul className="events">
+        {listData.map((item) => (
+          <li key={item.content}>
+            <Badge
+              status={item.type as BadgeProps['status']}
+              text={item.content}
+            />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  const cellRender: CalendarProps<Dayjs>['cellRender'] = (current, info) => {
+    if (info.type === 'date') return dateCellRender(current)
+    if (info.type === 'month') return monthCellRender(current)
+    return info.originNode
+  }
+
+  const peopleData = [
+    {
+      img: Images.Eddie,
+      name: 'Eddie Lobanovskiy',
+      email: 'laboanovskiy@gmail.com'
+    },
+    {
+      img: Images.Alex,
+      name: 'Alexey Stave',
+      email: 'alexeyst@gmail.com'
+    },
+    {
+      img: Images.Anton,
+      name: 'Anton Tkacheve',
+      email: 'tkacheveanton@gmail.com'
+    }
+  ]
   return (
     <CalendarWrapper>
       <div className="calendar-header">
@@ -73,14 +152,14 @@ const Calendar = () => {
             <div className="title">People</div>
             <Input placeholder="Search for People" />
             <div className="people-details">
-              {Array.from({ length: 3 }).map((index: any) => (
-                <div key={index} className="details">
+              {peopleData.map((people, index) => (
+                <div className="details" key={index}>
                   <div className="person-img">
-                    <img src={Images.Eddie} alt="avtar" />
+                    <img src={people.img} alt="avtar" />
                   </div>
                   <div className="about">
-                    <p className="name">Eddie Lobanovskiy</p>
-                    <p className="email">laboanovskiy@gmail.com</p>
+                    <p className="name">{people.name}</p>
+                    <p className="email">{people.email}</p>
                   </div>
                 </div>
               ))}
@@ -132,6 +211,7 @@ const Calendar = () => {
         </div>
         <div className="calendar">
           <AntCalendar
+            cellRender={cellRender}
             headerRender={() => (
               <div className="schedule-calendar-header d-flex jc-space-between">
                 <p>December 2, 2021</p>

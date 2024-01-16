@@ -8,6 +8,7 @@ import InvoiceList from './pages/InvoiceList/InvoiceList'
 import Login from './pages/Login/Login'
 import SignIn from './pages/SignIn/SignIn'
 import Calendar from './pages/Calendar/Calendar'
+import NewInvoice from './pages/InvoiceList/NewInvoice/NewInvoice'
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ function App() {
         {
           path: '/invoice',
           element: <InvoiceList />
+        },
+        {
+          path: '/new-invoice',
+          element: <NewInvoice />
         },
         {
           path: '/calendar',

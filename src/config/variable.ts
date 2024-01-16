@@ -5,6 +5,9 @@ interface ColorValues {
   lavender: string
   lotion: string
   red: string
+  magenta: string
+  green: string
+  gray: string
   'orange-50': string
   'orange-100': string
   'cyan-50': string
@@ -31,9 +34,12 @@ export const themes: Record<'default' | 'dark', ColorValues> = {
     pink: '255, 199, 212',
     lavender: '229, 225, 251',
     lotion: '250, 250, 250',
-    red: '231, 29, 54, 1',
-    'orange-50':'250, 231, 225',
-    'orange-100':'255, 143, 107',
+    red: '231, 29, 54',
+    magenta: '239, 55, 255',
+    green: '43, 153, 67',
+    gray: '130, 134, 145',
+    'orange-50': '250, 231, 225',
+    'orange-100': '255, 143, 107',
     'cyan-50': '236,249,252',
     'cyan-100': '38, 192, 226',
     'primary-50': '245, 248, 255',
@@ -56,9 +62,12 @@ export const themes: Record<'default' | 'dark', ColorValues> = {
     pink: '255, 199, 212',
     lavender: '229, 225, 251',
     lotion: '250, 250, 250',
-    red: '231, 29, 54, 1',  
-    'orange-50':'250, 231, 225',
-    'orange-100':'255, 143, 107',
+    red: '231, 29, 54, 1',
+    magenta: '239, 55, 255',
+    green: '43, 153, 67',
+    gray: '130, 134, 145',
+    'orange-50': '250, 231, 225',
+    'orange-100': '255, 143, 107',
     'cyan-50': '236,249,252',
     'cyan-100': '38, 192, 226',
     'primary-50': '75, 7, 23',

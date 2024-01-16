@@ -12,6 +12,7 @@ import Images from '../../config/images'
 import Email from '../../components/icons/Email'
 import Calender from '../../components/icons/Calender'
 import { Button } from '../../components/ant'
+import { Link } from 'react-router-dom'
 
 const InvoiceList = () => {
   interface DataType {
@@ -184,9 +185,11 @@ const InvoiceList = () => {
         <h1 className="page-title">Invoice List</h1>
         <div className="invoice-cta">
           <Input placeholder="Search" suffix={<Search />} />
-          <Button type="primary" size="small" icon={<Plus />}>
-            Add New
-          </Button>
+          <Link to={'/new-invoice'}>
+            <Button type="primary" size="small" icon={<Plus />}>
+              Add New
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="invoice-table">

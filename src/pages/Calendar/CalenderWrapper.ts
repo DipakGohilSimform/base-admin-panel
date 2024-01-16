@@ -15,6 +15,7 @@ export const CalendarWrapper = styled.div`
       width: auto;
       padding: 11px 22px;
       background-color: var(--primary-50);
+      border: none;
 
       &:focus,
       &:hover {
@@ -140,21 +141,49 @@ export const CalendarWrapper = styled.div`
       background-color: var(--lotion);
     }
     th {
+      font-size: 16px;
+      font-weight: 600;
       text-align: center;
     }
     .schedule-calendar-header {
       padding: 15px;
       margin-bottom: 0;
     }
-    .ant-picker-calendar-date-content {
-      display: none;
-    }
     .ant-picker-cell-inner {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      max-width: 123px;
       height: 127px;
+    }
+    .ant-picker-calendar-date {
+      margin: 0;
+    }
+    .ant-picker-calendar-date-value {
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      opacity: 0.7;
+    }
+    .ant-picker-calendar-date-content {
+      width: 100%;
+      .events {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+      }
+    }
+    .ant-picker-calendar-date-today {
+      background-color: var(--white) !important;
+      border-color: var(--orange-100);
+      .ant-picker-calendar-date-value {
+        color: var(--orange-100) !important;
+        opacity: 1;
+      }
     }
   }
 `
@@ -242,6 +271,11 @@ export const EventModal = styled(Modal)`
       &:hover {
         border: 1px solid var(--primary-ribbon-300);
       }
+    }
+  }
+  .ant-btn {
+    &:active {
+      background: var(--primary-ribbon-400) !important;
     }
   }
 `

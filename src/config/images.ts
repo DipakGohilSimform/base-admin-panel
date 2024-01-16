@@ -18,6 +18,9 @@ import Robert from '../assets/images/robert.png'
 import LoginMockup from '../assets/images/login-mockup.png'
 import SigninMockup from '../assets/images/signin-mockup.png'
 import Eddie from '../assets/images/eddie.png'
+import Alex from '../assets/images/alex.png'
+import Anton from '../assets/images/anton.png'
+import JLogo from '../assets/images/j-logo.png'
 
 const Images = {
   Logo,
@@ -39,7 +42,10 @@ const Images = {
   Robert,
   LoginMockup,
   SigninMockup,
-  Eddie
+  Eddie,
+  Alex,
+  Anton,
+  JLogo
 }
 
 export default Images

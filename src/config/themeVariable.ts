@@ -37,14 +37,14 @@ export const componentTokens: OverrideToken = {
     colorPrimaryText: 'var(--black)'
   },
   Radio: {
-    buttonBg:'var(--orange-50)',
-    buttonCheckedBg:'var(--orange-100)',
-    colorBorder:'transparent'
+    buttonBg: 'var(--orange-50)',
+    buttonCheckedBg: 'var(--orange-100)',
+    colorBorder: 'transparent'
   },
   Input: {
-    borderRadius:10,
-    colorPrimaryHover:'var(--lavender)',
-    colorPrimaryActive:'var(--red)'
+    borderRadius: 10,
+    colorPrimaryHover: 'var(--lavender)',
+    colorPrimaryActive: 'var(--red)'
   },
   Select: {
     colorBgElevated: 'var(--neutral-0)',

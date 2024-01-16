@@ -148,8 +148,8 @@ const AdminDashboard = () => {
       <div className="dashboard-header">
         <h1 className="page-title">Dashboard</h1>
         <div className="calender">
-          <DatePicker suffixIcon={<ArrowDate />} />
-          <DatePicker suffixIcon={<ArrowDate />} />
+          <DatePicker suffixIcon={<ArrowDate />} placeholder="Start Date" />
+          <DatePicker suffixIcon={<ArrowDate />} placeholder="End Date" />
         </div>
       </div>
       <div className="analytics-cards-wrapper">
