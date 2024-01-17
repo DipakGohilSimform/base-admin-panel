@@ -5,7 +5,7 @@ import Images from '../../config/images'
 import { DashboardStyle } from './Dashboard'
 import { Button, DatePicker, DatePickerProps, Popover } from 'antd'
 import { ReactNode } from 'react'
-import Arrow from '../../components/icons/Arrow'
+import ArrowDate from '../../components/icons/ArrowDate'
 
 const AdminDashboard = () => {
   const onChange: DatePickerProps['onChange'] = (date, dateString) => {
@@ -148,8 +148,8 @@ const AdminDashboard = () => {
       <div className="dashboard-header">
         <h1 className="page-title">Dashboard</h1>
         <div className="calender">
-          <DatePicker onChange={onChange} />
-          <DatePicker onChange={onChange} />
+          <DatePicker suffixIcon={<ArrowDate />} placeholder="Start Date" />
+          <DatePicker suffixIcon={<ArrowDate />} placeholder="End Date" />
         </div>
       </div>
       <div className="analytics-cards-wrapper">
@@ -186,7 +186,12 @@ const AdminDashboard = () => {
               </Button>
             </Popover>
           </div>
-          <Table columns={columns} dataSource={data} pagination={false} />
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={false}
+            scroll={{ x: true }}
+          />
         </div>
         <div className="top-products">
           <div className="heading">

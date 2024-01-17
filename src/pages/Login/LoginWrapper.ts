@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 export const LoginWrapper = styled.div`
   display: flex;
-  height: 100vh;
-  width: 100vw;
-
+  min-height: 100vh;
   .form-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,6 +12,7 @@ export const LoginWrapper = styled.div`
     background-color: var(--white);
     max-width: 448px;
     padding: 50px;
+    overflow: hidden;
     @media (max-width: 576px) {
       padding: 25px;
     }
@@ -41,21 +40,7 @@ export const LoginWrapper = styled.div`
       justify-content: center;
       gap: 22px;
       margin-bottom: 25px;
-      .ant-btn {
-        display: flex;
-        width: 164px;
-        max-width: 100%;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        background-color: var(--lotion);
-        padding-inline: 20px;
-        border: none;
-        @media (max-width: 480px) {
-          width: 100%;
-        }
-      }
+
       @media (max-width: 480px) {
         flex-wrap: wrap;
       }
@@ -123,20 +108,16 @@ export const LoginWrapper = styled.div`
 
         .reset {
           color: var(--primary-100);
-          opacity: 0.8;
         }
       }
       .login-btn {
-        height: 50px;
         width: 100%;
-        font-size: 16px;
-        font-weight: 600;
-        background-color: var(--primary-100);
-        color: var(--white);
-        border: transparent;
-
-        &:hover {
-          color: var(--white);
+        margin-bottom: 30px;
+      }
+      .new-account {
+        text-align: center;
+        a {
+          color: var(--primary-100);
         }
       }
     }
@@ -154,5 +135,9 @@ export const LoginWrapper = styled.div`
     @media (max-width: 992px) {
       display: none;
     }
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    bottom: 0;
   }
 `
