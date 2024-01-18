@@ -165,7 +165,11 @@ function NewInvoice() {
                 12345678
               </p>
               <p className="invoice-email light-text">
+<<<<<<< HEAD
                 <span>@</span>add
+=======
+                <span>@</span>dipak.mail@gmail.com
+>>>>>>> email added
               </p>
               <p className="invoice-m light-text">
                 <span>m</span>+386 714 505 8385
