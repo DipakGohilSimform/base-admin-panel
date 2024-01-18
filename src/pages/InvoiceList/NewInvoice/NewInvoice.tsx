@@ -1,19 +1,18 @@
-import { NewInvoiceWrapper } from './NewInvoiceWrapper'
-import { FaDownload } from 'react-icons/fa'
-import { FaPrint } from 'react-icons/fa'
-import Image from '../../../components/icons/Image'
-import { DatePicker, Input, Table } from 'antd'
-import { Button } from '../../../components/ant'
-import Plus from '../../../components/icons/Plus'
+import { FaDownload, FaPrint } from 'react-icons/fa'
+import { DatePicker, Form, Input, Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 import { MdDelete } from 'react-icons/md'
+import Image from '../../../components/icons/Image'
+import { Button } from '../../../components/ant'
+import Plus from '../../../components/icons/Plus'
+import { NewInvoiceWrapper } from './NewInvoiceWrapper'
 import Images from '../../../config/images'
 import InvoicePreviewTable from './InvoicePreviewTable/InvoicePreviewTable'
 import Location from '../../../components/icons/Location'
 import Calendar from '../../../components/icons/Calendar'
 
 // invoice-table-data
-const NewInvoice = () => {
+function NewInvoice() {
   interface DataType {
     key: React.Key
     productNo: string
@@ -78,6 +77,13 @@ const NewInvoice = () => {
       amount: '$8850'
     }
   ]
+  type FieldType = {
+    id?: string
+    date?: string
+    name?: string
+    email?: string
+    address?: string
+  }
 
   return (
     <NewInvoiceWrapper>
@@ -88,45 +94,32 @@ const NewInvoice = () => {
         <div className="img">
           <Image />
         </div>
-        <form action="" className="new-invoice-form">
+        <Form action="" className="new-invoice-form" layout="vertical">
           <div className="half-input">
-            <div className="input-wrapper">
-              <label className="input-title" htmlFor="invoice-id">
-                Invoice Id
-              </label>
-              <Input placeholder="#876370" id="invoice-id" />
-            </div>
-            <div className="input-wrapper">
-              <label className="input-title" htmlFor="date">
-                Date
-              </label>
+            <Form.Item<FieldType> label="Invoice Id" name="id">
+              <Input placeholder="#876370" />
+            </Form.Item>
+            <Form.Item<FieldType> label="Date" name="date">
               <DatePicker id="date" suffixIcon={<Calendar />} />
-            </div>
+            </Form.Item>
           </div>
           <div className="input-wrapper full-input">
-            <label className="input-title" htmlFor="name">
-              Name
-            </label>
-            <Input placeholder="Alison G." id="name" />
+            <Form.Item<FieldType> label="Name" name="name">
+              <Input placeholder="Alison G." />
+            </Form.Item>
           </div>
           <div className="half-input">
-            <div className="input-wrapper">
-              <label className="input-title" htmlFor="Email">
-                Email
-              </label>
-              <Input placeholder="Example@gmail.com" id="Email" />
-            </div>
-            <div className="input-wrapper">
-              <label className="input-title" htmlFor="Address">
-                Address
-              </label>
+            <Form.Item<FieldType> label="Email" name="email">
+              <Input placeholder="Example@gmail.com" />
+            </Form.Item>
+            <Form.Item<FieldType> label="Address" name="address">
               <Input
                 placeholder="Street"
-                id="Address"
+                id="ddress"
                 suffix={<Location />}
                 className="address-field"
               />
-            </div>
+            </Form.Item>
           </div>
           <div className="desc">
             <p className="input-title">Product Description</p>
@@ -148,7 +141,7 @@ const NewInvoice = () => {
               Create Invoice
             </Button>
           </div>
-        </form>
+        </Form>
       </div>
       <div className="invoice-preview wrapper">
         <div className="header">

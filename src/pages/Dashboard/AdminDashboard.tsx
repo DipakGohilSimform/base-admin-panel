@@ -1,16 +1,12 @@
-import { Divider, Rate, Space, Table, Tag } from 'antd'
+import { Divider, Rate, Table, Button, DatePicker, Popover } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
+import { ReactNode } from 'react'
 import MenuIcon from '../../components/icons/Menu'
 import Images from '../../config/images'
 import { DashboardStyle } from './Dashboard'
-import { Button, DatePicker, DatePickerProps, Popover } from 'antd'
-import { ReactNode } from 'react'
 import ArrowDate from '../../components/icons/ArrowDate'
 
-const AdminDashboard = () => {
-  const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-    console.log(date, dateString)
-  }
+function AdminDashboard() {
   const CardData = [
     {
       icon: <img src={Images.Heart} alt="hear" />,
@@ -154,7 +150,7 @@ const AdminDashboard = () => {
       </div>
       <div className="analytics-cards-wrapper">
         {CardData.map((card, index) => (
-          <div className="analytic-card" key={index}>
+          <div className="analytic-card" key={Number(index)}>
             <div className="card-icon">{card.icon}</div>
             <div className="card-content">
               <h3 className="number">{card.number}</h3>

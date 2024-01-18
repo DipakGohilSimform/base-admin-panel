@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpointsDown } from '../../config/variable'
 
 const InvoiceListWrapper = styled.div`
   .invoice-list-header {
@@ -6,7 +7,7 @@ const InvoiceListWrapper = styled.div`
     justify-content: space-between;
     margin-bottom: 35px;
 
-    @media (max-width: 992px) {
+    @media (${breakpointsDown.sm}) {
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
@@ -62,7 +63,7 @@ const InvoiceListWrapper = styled.div`
       }
     }
     .ant-checkbox {
-      background-color: var(--pink);
+      background-color: var(--primary-100);
     }
   }
   .ant-table-wrapper

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { breakpointsDown } from '../../config/variable'
 
-export const SignInWrapper = styled.div`
+export const LayoutWrapper = styled.div`
   display: flex;
   min-height: 100vh;
   .form-wrapper {
@@ -13,7 +14,7 @@ export const SignInWrapper = styled.div`
     max-width: 448px;
     padding: 50px;
     overflow: hidden;
-    @media (max-width: 576px) {
+    @media (${breakpointsDown.sm}) {
       padding: 25px;
     }
     .logo {
@@ -21,7 +22,7 @@ export const SignInWrapper = styled.div`
       height: 92px;
       margin-bottom: 40px;
 
-      @media (max-width: 576px) {
+      @media (${breakpointsDown.sm}) {
         width: 60px;
         height: 60px;
         margin-bottom: 20px;
@@ -31,7 +32,7 @@ export const SignInWrapper = styled.div`
       font-size: 25px;
       font-weight: 600;
       margin-bottom: 40px;
-      @media (max-width: 576px) {
+      @media (${breakpointsDown.sm}) {
         margin-bottom: 20px;
       }
     }
@@ -41,13 +42,13 @@ export const SignInWrapper = styled.div`
       gap: 22px;
       margin-bottom: 25px;
 
-      @media (max-width: 480px) {
+      @media (${breakpointsDown.xs}) {
         flex-wrap: wrap;
       }
     }
     .ant-divider {
       margin-bottom: 40px;
-      @media (max-width: 576px) {
+      @media (${breakpointsDown.sm}) {
         margin-bottom: 25px;
       }
       .divider-text {
@@ -57,11 +58,13 @@ export const SignInWrapper = styled.div`
     }
     form {
       width: 100%;
-      .form-label {
-        display: inline-block;
+      label {
         font-size: 16px;
         font-weight: 400;
         margin-bottom: 8px;
+      }
+      .ant-form-item {
+        margin-bottom: 0;
       }
       .ant-input {
         background-color: var(--lotion);
@@ -92,26 +95,49 @@ export const SignInWrapper = styled.div`
           border: 1px solid var(--black);
         }
       }
+      .forget-password {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 400;
+        @media (${breakpointsDown.sm}) {
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+
+        .reset {
+          color: var(--primary-100);
+        }
+      }
       .terms-policy {
         display: flex;
         align-items: flex-start;
-        input {
-          margin-top: 5px;
-        }
-        .desc {
-          padding-left: 10px;
-          margin-bottom: 30px;
-
-          a {
-            color: var(--primary-100);
-          }
+        a {
+          color: var(--primary-100);
         }
       }
-      .login-btn {
+      .ant-checkbox-wrapper {
+        margin-bottom: 30px;
+        .ant-checkbox {
+          background-color: var(--primary-100);
+        }
+        span {
+          user-select: none;
+        }
+      }
+      .signup-checkbox {
+        .ant-checkbox {
+          margin-top: -25px;
+        }
+      }
+      .btn {
         width: 100%;
         margin-bottom: 30px;
       }
-      .have-account {
+      .account {
         text-align: center;
         a {
           color: var(--primary-100);
@@ -119,17 +145,17 @@ export const SignInWrapper = styled.div`
       }
     }
 
-    @media (max-width: 992px) {
+    @media (${breakpointsDown.lg}) {
       margin: 0 auto;
     }
   }
-  .signin-mockup {
+  .mockup {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
     background-color: var(--lotion);
-    @media (max-width: 992px) {
+    @media (${breakpointsDown.lg}) {
       display: none;
     }
     max-height: 100vh;

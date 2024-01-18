@@ -20,15 +20,18 @@ export const Badge = styled(AntBadge)`
       return css`
         background-color: var(--cyan-100);
       `
-    } else if (status === 'success') {
+    }
+    if (status === 'success') {
       return css`
         background-color: var(--magenta);
       `
-    } else if (status === 'warning') {
+    }
+    if (status === 'warning') {
       return css`
         background-color: var(--orange-100);
       `
     }
+    // eslint-disable-next-line no-lone-blocks
     {
       return css`
         background-color: var(--white);

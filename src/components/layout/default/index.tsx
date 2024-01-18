@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import { Menu } from 'antd'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { Layout } from './layout'
 import Images from '../../../config/images'
 import Dashboard from '../../icons/Dashboard'
@@ -11,17 +11,15 @@ import Messages from '../../icons/Messages'
 import Notification from '../../icons/Notification'
 import Settings from '../../icons/Settings'
 import Logout from '../../icons/Logout'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { Button } from '../../ant'
 
-const { Header, Sider, Content } = Layout
+const { Sider, Content } = Layout
 
-const AntLayout: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false)
+function AntLayout() {
   const navigate = useNavigate()
   return (
     <Layout>
-      <Sider width={218} trigger={null} collapsible collapsed={collapsed}>
+      <Sider width={218} trigger={null} collapsible>
         <div className="logo">
           <img src={Images.Logo} alt="logo" />
         </div>
@@ -29,7 +27,6 @@ const AntLayout: React.FC = () => {
           <Menu
             onClick={({ key }) => {
               navigate(key)
-              console.log('clicked')
             }}
             mode="inline"
             defaultSelectedKeys={['1']}
@@ -93,7 +90,7 @@ const AntLayout: React.FC = () => {
                   <p className="type">Free Account</p>
                 </div>
               </div>
-              <Link to={'/'}>
+              <Link to="/">
                 <Logout />
               </Link>
             </div>

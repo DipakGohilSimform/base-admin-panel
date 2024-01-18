@@ -1,10 +1,11 @@
 import React from 'react'
-import { Input, Tag } from 'antd'
+import { Input, Table } from 'antd'
+import type { ColumnsType } from 'antd/es/table'
+import { Link } from 'react-router-dom'
+import { Tag } from '../../components/ant/tag/Tag'
 import InvoiceListWrapper from './InvoiceListWrapper'
 import Search from '../../components/icons/Search'
 import Plus from '../../components/icons/Plus'
-import { Table } from 'antd'
-import type { ColumnsType } from 'antd/es/table'
 import Delete from '../../components/icons/Delete'
 import MenuIcon from '../../components/icons/Menu'
 import Star from '../../components/icons/Star'
@@ -12,9 +13,8 @@ import Images from '../../config/images'
 import Email from '../../components/icons/Email'
 import Calender from '../../components/icons/Calender'
 import { Button } from '../../components/ant'
-import { Link } from 'react-router-dom'
 
-const InvoiceList = () => {
+function InvoiceList() {
   interface DataType {
     key: React.Key
     invoiceId: string
@@ -167,13 +167,6 @@ const InvoiceList = () => {
   ]
   // rowSelection object indicates the need for row selection
   const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        'selectedRows: ',
-        selectedRows
-      )
-    },
     getCheckboxProps: (record: DataType) => ({
       disabled: record.name === 'Disabled User',
       name: record.name
@@ -185,7 +178,7 @@ const InvoiceList = () => {
         <h1 className="page-title">Invoice List</h1>
         <div className="invoice-cta">
           <Input placeholder="Search" suffix={<Search />} />
-          <Link to={'/new-invoice'}>
+          <Link to="/new-invoice">
             <Button type="primary" size="small" icon={<Plus />}>
               Add New
             </Button>

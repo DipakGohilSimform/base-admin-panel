@@ -7,15 +7,7 @@ export const globalTokens: Partial<AliasToken> = {
   controlOutlineWidth: 1,
   borderRadius: 2,
   colorPrimaryBg: 'var(--primary-50)',
-  colorPrimaryBgHover: 'var(--primary-100)',
-  colorPrimaryBorder: 'var(--primary-200)',
-  colorPrimaryBorderHover: 'var(--primary-300)',
-  colorPrimaryHover: 'var(--primary-400)',
-  colorPrimary: 'var(--primary-500)',
-  colorPrimaryActive: 'var(--primary-600)',
-  colorPrimaryTextHover: 'var(--primary-400)',
-  colorPrimaryText: 'var(--primary-500)',
-  colorPrimaryTextActive: 'var(--primary-600)'
+  colorPrimaryBgHover: 'var(--primary-100)'
 }
 
 export const componentTokens: OverrideToken = {
@@ -47,19 +39,8 @@ export const componentTokens: OverrideToken = {
     colorPrimaryActive: 'var(--red)'
   },
   Select: {
-    colorBgElevated: 'var(--neutral-0)',
-    selectorBg: 'var(--neutral-0)',
-    colorText: 'var(--neutral-900)',
     colorPrimaryBg: 'var(--primary-100)',
     colorPrimaryBgHover: 'var(--primary-100)',
-    colorPrimaryBorder: 'var(--primary-200)',
-    colorPrimaryBorderHover: 'var(--primary-300)',
-    colorPrimaryHover: 'var(--primary-400)',
-    colorPrimary: 'var(--primary-ribbon-500)',
-    colorPrimaryActive: 'var(--primary-600)',
-    colorPrimaryTextHover: 'var(--primary-400)',
-    colorPrimaryText: 'var(--primary-500)',
-    colorPrimaryTextActive: 'var(--primary-600)',
-    optionSelectedBg: 'var(--primary-100)'
+    colorPrimary: 'var(--primary-ribbon-500)'
   }
 }

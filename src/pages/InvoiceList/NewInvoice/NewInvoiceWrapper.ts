@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { breakpointsDown } from '../../../config/variable'
 
 export const NewInvoiceWrapper = styled.div`
   display: flex;
   gap: 30px;
-  @media (max-width: 1200px) {
+  @media (${breakpointsDown.xl}) {
     flex-wrap: wrap;
   }
 
@@ -50,18 +51,30 @@ export const NewInvoiceWrapper = styled.div`
       .half-input {
         display: flex;
         gap: 30px;
-        margin-bottom: 30px;
+
+        .ant-form-item {
+          width: 50%;
+        }
       }
       .full-input {
         flex: 1 1 100%;
         margin-bottom: 30px;
+        .ant-form-item {
+          width: 100%;
+        }
       }
-      .input-wrapper {
+      .ant-form-item {
         flex: 1 1 50%;
         .address-field {
           svg {
             height: 20px;
             width: 20px;
+          }
+          .ant-input {
+            border: none;
+          }
+          &:hover {
+            border: 1px solid var(--gray);
           }
         }
       }
@@ -69,16 +82,23 @@ export const NewInvoiceWrapper = styled.div`
         display: block;
         border-radius: 10px;
       }
-      .input-title {
-        display: inline-block;
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        cursor: pointer;
+      .ant-form-item-label {
+        label {
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+        }
       }
       .ant-picker,
       .ant-input {
         padding: 14px 11px;
+        &:hover {
+          border: 1px solid var(--gray);
+        }
+      }
+      .input-title {
+        font-size: 16px;
+        font-weight: 600;
       }
     }
     .desc {
@@ -195,6 +215,7 @@ export const NewInvoiceWrapper = styled.div`
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          margin-top: 15px;
           .account-data {
             display: flex;
             gap: 13px;
@@ -203,6 +224,31 @@ export const NewInvoiceWrapper = styled.div`
             font-size: 12px;
             font-weight: 600;
             color: var(--black);
+          }
+        }
+        .ant-table-row {
+          td {
+            font-size: 13px;
+            font-weight: 400;
+          }
+          &:not(:nth-child(1), :nth-child(2)) {
+            td {
+              &:not(:nth-child(3), :nth-child(4)) {
+                border-bottom: none;
+              }
+            }
+          }
+          &:last-child {
+            td {
+              &:nth-child(3) {
+                font-weight: 700;
+              }
+              &:nth-child(4) {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--cyan-100);
+              }
+            }
           }
         }
       }

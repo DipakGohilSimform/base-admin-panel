@@ -1,5 +1,6 @@
 import { Button as AntButton } from 'antd'
 import styled, { css } from 'styled-components'
+import { breakpointsDown } from '../../../config/variable'
 
 export const Button = styled(AntButton)`
   display: flex;
@@ -17,7 +18,7 @@ export const Button = styled(AntButton)`
         gap: 10px;
         padding-inline: 20px;
         border: none;
-        @media (max-width: 480px) {
+        @media (${breakpointsDown.xs}) {
           width: 100%;
         }
         &:hover,
@@ -27,5 +28,6 @@ export const Button = styled(AntButton)`
         }
       `
     }
+    return null
   }}
 `

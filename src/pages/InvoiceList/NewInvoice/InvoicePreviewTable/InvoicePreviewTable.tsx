@@ -1,8 +1,7 @@
 import Table, { ColumnsType } from 'antd/es/table'
 import React from 'react'
-import { TotalWrapper } from './TotalWrapper'
 
-const InvoicePreviewTable = () => {
+function InvoicePreviewTable() {
   interface DataType {
     key: React.Key
     taskDesc: string
@@ -48,31 +47,36 @@ const InvoicePreviewTable = () => {
       hours: '20',
       rate: '12 USD',
       amount: '240,00 USD'
+    },
+    {
+      key: '3',
+      taskDesc: '',
+      hours: '',
+      rate: 'SUBTOTAL',
+      amount: '1140,00 USD'
+    },
+    {
+      key: '4',
+      taskDesc: '',
+      hours: '',
+      rate: 'DISCOUNT 5%',
+      amount: '57,00 USD'
+    },
+    {
+      key: '5',
+      taskDesc: '',
+      hours: '',
+      rate: 'TOTAL',
+      amount: '1083,00 USD'
     }
   ]
   return (
-    <>
-      <Table
-        columns={invoiceColumns}
-        dataSource={invoiceData}
-        pagination={false}
-        scroll={{ x: true }}
-      />
-      <TotalWrapper>
-        <div className="cell">
-          <p className="title">SUBTOTAL</p>
-          <p className="amount">1140,00 USD</p>
-        </div>
-        <div className="cell">
-          <p className="title">DISCOUNT 5%</p>
-          <p className="amount">57,00 USD</p>
-        </div>
-        <div className="cell">
-          <p className="title total">TOTAL</p>
-          <p className="amount total-amount">1083,00 USD</p>
-        </div>
-      </TotalWrapper>
-    </>
+    <Table
+      columns={invoiceColumns}
+      dataSource={invoiceData}
+      pagination={false}
+      scroll={{ x: true }}
+    />
   )
 }
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Modal } from 'antd'
+import { breakpointsDown } from '../../config/variable'
 
 export const CalendarWrapper = styled.div`
   .calendar-header {
@@ -23,7 +24,7 @@ export const CalendarWrapper = styled.div`
         color: var(--white) !important;
       }
     }
-    @media (max-width: 992px) {
+    @media (${breakpointsDown.lg}) {
       flex-wrap: wrap;
       gap: 20px;
     }
@@ -31,7 +32,7 @@ export const CalendarWrapper = styled.div`
   .schedule-wrapper {
     display: flex;
     gap: 30px;
-    @media (max-width: 1100px) {
+    @media (${breakpointsDown.xl}) {
       flex-wrap: wrap;
     }
     .schedule-card {

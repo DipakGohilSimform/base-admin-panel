@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpointsDown } from '../../config/variable'
 
 export const DashboardStyle = styled.div`
   height: 100%;
@@ -29,7 +30,7 @@ export const DashboardStyle = styled.div`
         background-color: var(--primary-ribbon-100);
       }
     }
-    @media (max-width: 992px) {
+    @media (${breakpointsDown.xl}) {
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;

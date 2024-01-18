@@ -6,9 +6,9 @@ import GlobalStyle from './config/global.style'
 import AdminDashboard from './pages/Dashboard/AdminDashboard'
 import InvoiceList from './pages/InvoiceList/InvoiceList'
 import Login from './pages/Login/Login'
-import SignIn from './pages/SignIn/SignIn'
 import Calendar from './pages/Calendar/Calendar'
 import NewInvoice from './pages/InvoiceList/NewInvoice/NewInvoice'
+import SignUp from './pages/SignUp/SignUp'
 
 function App() {
   const router = createBrowserRouter([
@@ -42,8 +42,8 @@ function App() {
       element: <Login />
     },
     {
-      path: '/sign-in',
-      element: <SignIn />
+      path: '/sign-up',
+      element: <SignUp />
     }
   ])
 

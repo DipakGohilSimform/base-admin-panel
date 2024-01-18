@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import { CalendarWrapper } from './CalenderWrapper'
-import { Button } from '../../components/ant'
-import Plus from '../../components/icons/Plus'
 import { Calendar as AntCalendar, Input, Radio } from 'antd'
 import type { BadgeProps, CalendarProps } from 'antd'
 import type { Dayjs } from 'dayjs'
-import { EventModal as Modal } from './CalenderWrapper'
+import { CalendarWrapper, EventModal as Modal } from './CalenderWrapper'
+import { Button } from '../../components/ant'
+import Plus from '../../components/icons/Plus'
 import DoubleArrow from '../../components/icons/DoubleArrow'
 import Images from '../../config/images'
 import Clock from '../../components/icons/Clock'
 import EventCalendar from '../../components/icons/EventCalendar'
 import Location from '../../components/icons/Location'
 import Users from '../../components/icons/Users'
-import { Badge } from '../../components/ant/Badge/Badge'
+import { Badge } from '../../components/ant/badge/Badge'
 
 const getListData = (value: Dayjs) => {
   let listData
@@ -38,9 +37,10 @@ const getMonthData = (value: Dayjs) => {
   if (value.month() === 8) {
     return 1394
   }
+  return null
 }
 
-const Calendar = () => {
+function Calendar() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const showModal = () => {
@@ -140,6 +140,7 @@ const Calendar = () => {
             Create Schedule
           </Button>
           <AntCalendar
+            // eslint-disable-next-line react/no-unstable-nested-components
             headerRender={() => (
               <div className="schedule-calendar-header d-flex jc-space-between">
                 <p>December 2, 2021</p>
@@ -153,7 +154,7 @@ const Calendar = () => {
             <Input placeholder="Search for People" />
             <div className="people-details">
               {peopleData.map((people, index) => (
-                <div className="details" key={index}>
+                <div className="details" key={Number(index)}>
                   <div className="person-img">
                     <img src={people.img} alt="avtar" />
                   </div>
@@ -212,6 +213,7 @@ const Calendar = () => {
         <div className="calendar">
           <AntCalendar
             cellRender={cellRender}
+            // eslint-disable-next-line react/no-unstable-nested-components
             headerRender={() => (
               <div className="schedule-calendar-header d-flex jc-space-between">
                 <p>December 2, 2021</p>
